@@ -1,1 +1,42 @@
-test
+<!DOCTYPE html>
+<html class="js no-touchevents" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA vanille</title>
+    <link async rel="stylesheet" href="./css/style.css">
+    <!--link href="https://fonts.googleapis.com/css?family=Roboto:300,600,300italic,600italic" rel="stylesheet" type="text/css"-->
+    <!--link rel="manifest" href="./manifest.json"-->
+    <meta name="theme-color" content="#29BDBB">
+    <!--link rel="icon" sizes="192x192" href="./launcher-icon-8x.png"--> 
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <h3>PWA vanille</h3>
+        </div>
+    </header>
+    
+    <div id="sw" class="container">
+        
+    </div>
+    
+    <script> 
+        if ('serviceWorker' in navigator) {                                                                                     // si le navigateur a un serviceWorker
+            window.addEventListener('load', function() {                                                                        // à l'événement load
+                navigator.serviceWorker.register('http://localhost:8888/pwa_vanille/sw.js').then(function(registration) {       // register
+                    console.log('ServiceWorker registration a réussi, scope : ', registration.scope);                           // si 'register' réussi
+                }).catch(function(err) {                                                                                        // si 'register' échou
+                    console.log('ServiceWorker registration a échoué : ', err);
+                });
+            });
+        } 
+    </script>
+    
+    <!--script src="./js/build/vendor.min.js"></script>
+    <script src="./js/build/script.min.js"></script-->
+</body>
+
+</html>
