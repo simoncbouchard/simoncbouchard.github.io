@@ -1,17 +1,130 @@
 *{
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding: 0; 
+    margin: 0; 
+}
+
+body{
+    background-color: #f6f6f6;
 
 }
 
-.content{
+.entete{
     width: 100%;
-    height: 120px;
+    height: 150px;
     color:azure;
     //background-color: cadetblue;
-    background-color: blue;
+    background-color: #b32d00;
+    margin-bottom: 40px;
 }
 
-h3{
+.entete h3{
     margin-left: 50px;
-    padding-top: 50px;
+    padding-top: 65px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.2em;
+    letter-spacing: 0.2em;
+}
+
+.entete img{
+    margin-left: 35px;
+    padding-top: 45px;
+}
+
+.entete p{
+    margin-top: -7px;
+    margin-left: 50px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    
+}
+
+#listeBiere{
+    margin-left: 50px;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    color: #383838;
+
+}
+
+
+.bieres{
+    width : 90%;
+    margin : auto;
+    display : flex;
+    flex-flow : row;
+    flex-wrap : wrap;
+    justify-content : space-around;
+    
+    animation-name: animBiere;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+
+.chaqueBiere{    
+    padding-bottom: 15px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+
+.chaqueBiere:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.nomDeLaBiere{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #383838;
+}
+
+.brasserieDeLaBiere{
+    margin-left: 20px;
+    letter-spacing: 0.02em;
+    color: #383838;
+
+}
+
+@keyframes animBiere
+{
+	from
+	{
+		opacity: 0;
+        transform: translateY(200px);
+	}
+	to
+	{
+		opacity: 1;
+        transform: translateY(0px);
+        animation-timing-function: cubic-bezier(0, 0.635, 0.295, 1);
+	}
+}
+
+
+@media (max-width: 600px)
+{
+    .entete img{
+        margin-left: 26px;
+    }
+    
+    .entete p{
+        margin-left: 40px;
+    }
+
+    #listeBiere{
+        margin-left: 40px;
+        letter-spacing: 0em;
+    }
 }

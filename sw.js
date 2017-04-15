@@ -21,14 +21,6 @@ self.addEventListener('install', function(event) {                              
     );
 });
 
-/*
-self.addEventListener('fetch', function(event) {
-    console.log('fetch cache');
-    console.log(event.request.url);
-
-});
-*/
-
 /*--  RETOUR DE REQUÊTES  -----------------------------------------------------------*/
 
 self.addEventListener('fetch', function(event) {                                    // à l'évènement 'fetch' que reçoit le 'service worker' lors des navigations suivantes
@@ -99,17 +91,4 @@ self.addEventListener('activate', function(event) {                             
 
 
 
-
-// https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
-/*
-this.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll([
-        '/'
-      ]);
-    })
-  );
-});
-*/
 
