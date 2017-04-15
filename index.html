@@ -43,7 +43,7 @@
         
         if ('serviceWorker' in navigator) {                                                                                     // si le navigateur a un serviceWorker
             window.addEventListener('load', function() {                                                                        // à l'événement load
-                navigator.serviceWorker.register('http://localhost:8888/pwa_biero/sw.js').then(function(registration) {       // register
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {       // register
                     console.log('ServiceWorker registration a réussi, scope : ', registration.scope);                           // si 'register' réussi
                 }).catch(function(err) {                                                                                        // si 'register' échou
                     console.log('ServiceWorker registration a échoué : ', err);

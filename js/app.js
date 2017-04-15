@@ -7,14 +7,31 @@
         /*--  RÉCUPÈRE LE JSON DU WEBSERVICE  ------------------------------------------------*/
         
         if(navigator.onLine){                                                                           // si en ligne
+                    
+            // source : https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+            
+            var invocation = new XMLHttpRequest();
+            var url = 'http://www.simoncbouchard.ca/webservice/biero/biere';
+   
+            function callOtherDomain() {
+                if(invocation) {    
+                  invocation.open('GET', url, true);
+                  invocation.onreadystatechange = handler;
+                  invocation.send(); 
+                }
+            }
+            
+            var biere = callOtherDomain();
+            
+            
             
             // source : http://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
             
-            var url = 'http://www.simoncbouchard.ca/webservice/biero/biere';    
+            //var url = 'http://www.simoncbouchard.ca/webservice/biero/biere';    
             
-            fetch(url)
-            .then(res => res.json())
-            .then((biere) => {
+            //fetch(url)
+            //.then(res => res.json())
+            //.then((biere) => {
                 console.log(biere);
                 
                 // source : http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
@@ -49,8 +66,8 @@
                     parBrasserie.appendChild(brasserie);
                     
                 }
-            })
-            .catch(err => console.error(err));
+            //})
+            //.catch(err => console.error(err));
         }
         else{
             var recupereLeJsonDesBieres = localStorage.getItem('jsonDesBieresEnString');
