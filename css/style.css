@@ -1,3 +1,14 @@
+/*  TOC
+    - Global
+    - Entête
+    - Liste des bières
+    - Une bière
+    - Anmation
+--------------------------------------------------------*/
+
+/*  Global
+--------------------------------------------------------*/
+
 *{
     font-family: 'Roboto', sans-serif;
     padding: 0; 
@@ -6,8 +17,10 @@
 
 body{
     background-color: #f6f6f6;
-
 }
+
+/*  Entête
+--------------------------------------------------------*/
 
 .entete{
     width: 100%;
@@ -15,7 +28,7 @@ body{
     color:azure;
     //background-color: cadetblue;
     background-color: #b32d00;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .entete h3{
@@ -28,16 +41,61 @@ body{
 
 .entete img{
     margin-left: 35px;
-    padding-top: 45px;
+    padding-top: 29px;
 }
 
 .entete p{
     margin-top: -7px;
     margin-left: 50px;
     font-weight: 300;
-    letter-spacing: 0.04em;
-    
+    letter-spacing: 0.04em;  
 }
+
+.lienGithub{
+    position: fixed;
+    right: 0;
+    margin-right: 30px;
+    top: 0;
+    margin-top: 20px;
+    color: black;
+}
+
+.lienGithub:hover{
+    color: blue;
+}
+
+.classeDivRondVert{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: darkgreen;
+    margin-left: 50px;
+    margin-top: 17px;
+}
+
+.classeParVousEteConnecte{
+    display: inline-block;
+    color: black;
+    padding-top: 15px;
+}
+
+.classeDivRondRouge{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 50px;
+    margin-top: 17px;
+}
+
+.classeParVousNetePasConnecte{
+    display: inline-block;
+    color: black;
+    padding-top: 15px;
+}
+
+/*  Liste des bières
+--------------------------------------------------------*/
 
 #listeBiere{
     margin-left: 50px;
@@ -45,9 +103,7 @@ body{
     font-size: 1.5em;
     letter-spacing: 0.1em;
     color: #383838;
-
 }
-
 
 .bieres{
     width : 90%;
@@ -74,7 +130,6 @@ body{
     transition: all .2s ease-in-out;
 }
 
-
 .chaqueBiere:hover{
     cursor: pointer;
     transform: scale(1.05);
@@ -94,8 +149,90 @@ body{
     margin-left: 20px;
     letter-spacing: 0.02em;
     color: #383838;
+}
+
+@media (max-width: 600px)
+{
+    .entete img{
+        margin-left: 26px;
+    }
+    
+    .entete p{
+        margin-left: 40px;
+    }
+    
+    .classeDivRondVert{
+        margin-left: 40px;
+    }
+    
+    .classeDivRondRouge{
+        margin-left: 40px;
+    }
+
+    #listeBiere{
+        margin-left: 40px;
+        letter-spacing: 0em;
+    }
+    
+}
+
+/*  Une bière
+--------------------------------------------------------*/
+
+.biere{
+    width : 90%;
+    margin : auto;
+    display : flex;
+    flex-flow : row;
+    flex-wrap : wrap;
+    justify-content : space-around;
+}
+
+.uneBiereImage{
+    margin-right: 5%;
+    margin-bottom: 25px;
 
 }
+
+.uneBiereTexte{
+    flex: 1;
+    min-width: 300px;
+    
+    animation-name: animBiere;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.nomDeLaBierePage{
+    //margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 2em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #383838;
+}
+
+.brasserieDeLaBierePage{
+    font-size: 1.2em;
+    letter-spacing: 0.02em;
+    color: #383838;
+}
+
+.moyenneDeLaBierePage{
+    display: inline-block;
+    font-size: 3em;
+    margin-top: 10px;
+}
+
+.descriptionDeLaBierePage{
+    margin-top: 30px;
+
+}
+
+
+/*  Animation
+--------------------------------------------------------*/
 
 @keyframes animBiere
 {
@@ -110,21 +247,4 @@ body{
         transform: translateY(0px);
         animation-timing-function: cubic-bezier(0, 0.635, 0.295, 1);
 	}
-}
-
-
-@media (max-width: 600px)
-{
-    .entete img{
-        margin-left: 26px;
-    }
-    
-    .entete p{
-        margin-left: 40px;
-    }
-
-    #listeBiere{
-        margin-left: 40px;
-        letter-spacing: 0em;
-    }
 }
